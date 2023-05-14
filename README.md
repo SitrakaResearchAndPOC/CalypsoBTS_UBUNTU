@@ -263,6 +263,7 @@ sed -i -e  's/#CFLAGS += -DCONFIG_TX_ENABLE/CFLAGS += -DCONFIG_TX_ENABLE/g' targ
 ```
 tail -f target/firmware/Makefile
 ```
+Tape ctrl+C
 ```
 cd ../..
 ```
