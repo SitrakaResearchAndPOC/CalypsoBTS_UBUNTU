@@ -46,7 +46,7 @@ echo "deb http://fr.archive.ubuntu.com/ubuntu/ xenial main restricted universe m
 ```
 tail -f /etc/apt/sources.list 
 ```
-Tape ctrl+D  
+Tape ctrl+C  
 ```
 apt update
 ```
@@ -59,7 +59,7 @@ sed -i '$ d' /etc/apt/sources.list
 ```
 tail -f /etc/apt/sources.list 
 ```
-Tape ctrl+D  
+Tape ctrl+C  
 ```
 apt update
 ```
