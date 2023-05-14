@@ -22,6 +22,7 @@ apt-get install alsa-base alsa-oss alsa-utils oss-compat
 ```
 modprobe snd-pcm-oss
 ```
+```
 modprobe snd-mixer-oss
 ```
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 40976EAF437D05B5 
@@ -30,11 +31,13 @@ apt-get install gcc-9 g++-9 gcc-10 g++-10 git -y
 ```
 adding this one 
 for raspberry : 
-# deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe multiverse
-
-# "Architecture could be amd64, armel, arm64 ?" 
-
+echo "deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe multiverse" >> /etc/apt/sources.list  
+Architecture could be amd64, armel, arm64 ?"  
 echo "deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" >> /etc/apt/sources.list
+
+```
+echo "deb http://fr.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" >> /etc/apt/sources.list
+```
 
 
 apt update
