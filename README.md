@@ -580,7 +580,7 @@ cd ../ && zip -r osmo-bts_karly.zip osmo-bts &&  mv osmo-bts_karly.zip ../../Des
 
 ```
 ```
-autoreconf -i 
+cd osmo-bts && autoreconf -i 
 ```
 ```
 ./configure --enable-trx 
