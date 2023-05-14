@@ -311,7 +311,7 @@ autoreconf -i
 ./configure 
 ```
 ```
-make -j4 
+make 
 ```
 ```
 make install 
@@ -325,6 +325,9 @@ cd ..
 ### Changing to gcc-5 
 ```
 update-alternatives --set gcc /usr/bin/gcc-5
+```
+```
+gcc --version
 ```
 ### Installing TRX
 ```
