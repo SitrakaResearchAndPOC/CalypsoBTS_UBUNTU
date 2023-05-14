@@ -9,7 +9,7 @@ As same as :
 apt update
 ```
 ```
-mkdir src && mkdir Desktop/gsmkarly_backup && cd src && mkdir gsmkarly && gsmkarly
+mkdir src && mkdir Desktop/gsmkarly_backup && cd src && mkdir gsmkarly && cd gsmkarly
 ```
 ### Installing all gcc
 ```
