@@ -154,13 +154,13 @@ Download GNU_ARM_FOR UBUNTU IN :
 [gnuarm](https://drive.google.com/file/d/1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ/view?usp=share_link)  
 [wget and drive](https://medium.com/@acpanjan/download-google-drive-files-using-wget-3c2c025a8b99)
 ```
-wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ" -O gnuarm_for_ubuntu.zip  && rm -rf /tmp/cookies.txt
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ" -O gnuarm2_for_ubuntu.zip  && rm -rf /tmp/cookies.txt
 ```
 ```
-unzip gnuarm_for_ubuntu.zip
+unzip gnuarm2_for_ubuntu.zip
 ```
 ```
-mv gnuarm_for_ubuntu.zip ../../Desktop/gsmkarly_backup/
+mv gnuarm2_for_ubuntu.zip ../../Desktop/gsmkarly_backup/
 ```
 ```
 cd gnuarm
@@ -394,6 +394,17 @@ make HOST_layer23_CONFARGS=--enable-transceiver -e CROSS_TOOL_PREFIX=arm-none-ea
 
 find -name trx.highram.bin  
 cd ../..  
+
+### Changing to python 3
+```
+apt-get install python3
+```
+```
+rm -rf /usr/bin/python
+```
+```
+sudo ln -s /usr/bin/python2 /usr/bin/python
+```
 
 ### Installing asterisk dependancies
 ```
