@@ -1,4 +1,4 @@
-# CalypsoBTS UBUNTU (20.O4)
+# CalypsoBTS UBUNTU (20.04)
 
 INSTALLATION KARLI BTS :  
 As same as : 
