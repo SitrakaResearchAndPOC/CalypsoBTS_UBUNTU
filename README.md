@@ -44,6 +44,9 @@ echo "deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ xenial main restrict
 echo "deb http://fr.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" >> /etc/apt/sources.list
 ```
 ```
+tail -f /etc/apt/sources.list 
+```
+```
 apt update
 ```
 ```
