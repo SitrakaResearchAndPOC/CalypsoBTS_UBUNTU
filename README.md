@@ -568,14 +568,12 @@ cd src/OTHER/trx/src  && host/osmocon/osmocon -m c123xor -p /dev/ttyUSB1 -s /tmp
 cd src/OTHER/trx/src/host/layer23/src/transceiver/ && ./transceiver -a arfcn -2 -r 99
 ```
 
-config open-bsc.cfg
-[open-bsc.cfg](https://pastebin.com/Euj2QQ66)  
+config [open-bsc.cfg](https://pastebin.com/Euj2QQ66)  
 ### Terminal 4 : 
 ```
 osmo-nitb -c open-bsc.cfg -l hlr.sqlite3 -P -C --debug=DRLL:DCC:DMM:DRR:DRSL:DNM
 ```
-config osmo-bts.cfg
-[osmo-bts.cfg](https://pastebin.com/YM3mS2bY)  
+config [osmo-bts.cfg](https://pastebin.com/YM3mS2bY)  
 ### Terminal 5 : 
 ```
 osmo-bts-trx -c osmo-bts.cfg --debug DRSL:DOML:DLAPDM 
