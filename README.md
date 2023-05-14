@@ -29,10 +29,13 @@ apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 40976E
 ```
 apt-get install gcc-9 g++-9 gcc-10 g++-10 git -y
 ```
-adding this one 
-for raspberry :  
+Adding one last line (could be done with mousepad)
+* for raspberry :  
 echo "deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe multiverse" >> /etc/apt/sources.list  
-
+```
+echo "deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe multiverse" >> /etc/apt/sources.list  
+```
+* for normal computer
 Architecture could be amd64, armel, arm64 ?"  
 echo "deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" >> /etc/apt/sources.list  
 ```
@@ -66,64 +69,90 @@ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bi
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10
 ```
 
-mousepad /etc/apt/sources.list  
-Adding in last line :  
-deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse  
-mousepad /etc/apt/sources.list  
-Change the last line for raspberry :  
-deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe  
-Change the last line for normal computer : 
+Adding one last line (could be done with mousepad):  
+* for raspberry : 
+```
+echo "deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse" >> /etc/apt/sources.list    
+```
+* for normal computer : 
 deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list  
 ```
 echo "deb http://fr.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list
 ```
-
+```
 tail -f /etc/apt/sources.list
-
+```
+```
 apt update
+```
+```
 apt-get install -y gcc-5 g++-5 libssl1.0-dev
-
-(commande en un seul ligne)
+```
+```
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 50 --slave /usr/bin/g++ g++ /usr/bin/g++-5
-
+```
+```
 sed -i '$ d' /etc/apt/sources.list
-
+```
+```
 tail -f /etc/apt/sources.list
-
+```
+```
 apt  update
+```
+```
 update-alternatives --set gcc /usr/bin/gcc-4.9
-
+```
+```
 gcc --version
-
-
-TOUS LES DEB SE TROUVENT DANS : /var/cache/apt/archives/
-
-
-cd /root/Desktop/karli/
+```
+All deb files in : /var/cache/apt/archives/
+```
 wget http://ftp.gnu.org/gnu/texinfo/texinfo-4.13.tar.gz 
+```
+```
 tar xvf texinfo-4.13.tar.gz
- cd texinfo-4.13
-  ./configure --build=aarch64-unknown-linux-gnu
-  make -j$(nproc)
-  make -j$(nproc) install
-ldconfig
-
-TELECHARGER GNU_ARM_FOR UBUNTU DANS: 
-https://drive.google.com/file/d/1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ/view?usp=share_link
-
+```
+```
+cd texinfo-4.13
+```
+* for raspberry :
+```
+./configure --build=aarch64-unknown-linux-gnu
+```
+* for normal computer : 
+```
+./configure
+```
+```
+make && make  install && ldconfig
+```
+```
 cd ..
-# https://medium.com/@acpanjan/download-google-drive-files-using-wget-3c2c025a8b99
+```
 
-
+Download GNU_ARM_FOR UBUNTU IN :  
+[gnuarm](https://drive.google.com/file/d/1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ/view?usp=share_link)  
+[wget and drive](https://medium.com/@acpanjan/download-google-drive-files-using-wget-3c2c025a8b99)
+```
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1xV3RLZg3Lm4m3UPd1nDfO_xEjIH2F5lQ" -O gnuarm_for_ubuntu.zip  && rm -rf /tmp/cookies.txt
-
+```
+```
 unzip gnuarm_for_ubuntu.zip
+```
+```
 mv gnuarm_for_ubuntu.zip ../../Desktop/gsmkarly_backup/
+```
+```
 cd gnuarm
+```
+```
 chmod +x gnu-arm-build.2.sh
+```
+```
 bash gnu-arm-build.2.sh
-BOIRE QUELQUES BIERRES PARCE QUE CA VA PRENDRE ENVION 5H : 
- 
+```
+Some times, compilation could take 5H,wait and drink some beer:    
 make[1]: Leaving directory '/root/Desktop/karli/gnuarm/build/gcc-4.5.2'
 Build complete! Add /root/Desktop/karli/gnuarm/install/bin to your PATH to make arm-elf-gcc and friends
 accessible directly.
