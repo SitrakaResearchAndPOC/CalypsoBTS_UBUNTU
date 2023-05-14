@@ -458,7 +458,7 @@ cd libosmo-netif/  && git checkout 09c71b04f5a8d82515d0d4d541b8368b585dbd31
 cd .. && zip -r libosmo-netif_karly.zip libosmo-netif && mv libosmo-netif_karly.zip    ../../Desktop/gsmkarly_backup/
 ```
 ```
-autoreconf -i 
+cd libosmo-netif && autoreconf -i 
 ```
 ```
 ./configure 
