@@ -31,51 +31,52 @@ apt-get install gcc-9 g++-9 gcc-10 g++-10 git -y
 ```
 adding this one 
 for raspberry :  
-
 echo "deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe multiverse" >> /etc/apt/sources.list  
+
 Architecture could be amd64, armel, arm64 ?"  
-
 echo "deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" >> /etc/apt/sources.list  
-
-
 ```
 echo "deb http://fr.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" >> /etc/apt/sources.list
 ```
-
-
+```
 apt update
+```
+```
 apt-get install gcc-4.9 g++-4.9 gcc-7 g++-7 -y
-
+```
+```
 sed -i '$ d' /etc/apt/sources.list
+```
+```
 apt update
-
-(commande en un seul ligne)
+```
+```
 apt-get install -y build-essential libusb-1.0-0-dev libsqlite3-dev libsctp-dev libgmp-dev libx11-6 libx11-dev flex libncurses5 libdbd-sqlite3 libdbi-dev libncurses5-dev libncursesw5 libpcsclite-dev zlib1g-dev libmpc3 lemon aptitude libtinfo-dev libtool shtool autoconf git-core pkg-config make libmpfr-dev libmpc-dev libtalloc-dev libfftw3-dev libgnutls28-dev libtool-bin libxml2-dev sofia-sip-bin libsofia-sip-ua-dev sofia-sip-bin libncursesw5-dev bison libgmp3-dev alsa-oss
-
-(commande en un seul ligne)
+```
+```
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 49 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
-
-(commande en un seul ligne)
+```
+```
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
-
-(commande en un seul ligne)
+```
+```
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9
-
-(commande en un seul ligne)
+```
+```
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10
+```
 
-# mousepad /etc/apt/sources.list
-# Ajouter à la fin : 
-# adding this another one 
-# deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse
-
-#mousepad /etc/apt/sources.list
-#changer à la fin  en : 
-
-# adding this another one 
-# deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe 
-
-echo "deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list
+mousepad /etc/apt/sources.list  
+Adding in last line :  
+deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse  
+mousepad /etc/apt/sources.list  
+Change the last line for raspberry :  
+deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe  
+Change the last line for normal computer : 
+deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list  
+```
+echo "deb http://fr.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list
+```
 
 tail -f /etc/apt/sources.list
 
