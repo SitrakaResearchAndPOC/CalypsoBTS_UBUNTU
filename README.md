@@ -170,7 +170,8 @@ chmod +x gnu-arm-build.2.sh
 ```
 ```
 bash gnu-arm-build.2.sh
-```
+``` 
+CLICK ENTER  
 Some times, compilation could take 5H,wait and drink some beer:  
 
 make[1]: Leaving directory '/root/Desktop/karli/gnuarm/build/gcc-4.5.2'  
