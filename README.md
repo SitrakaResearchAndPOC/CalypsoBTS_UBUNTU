@@ -182,23 +182,22 @@ to make arm-elf-gcc and friends
 cd ../..
 ```
 Exporting path and addin this on bashrc
+
 ```
-```
-apt-get install zip
-```
-```
-update-alternatives --set gcc /usr/bin/gcc-9
+export PATH=$PATH:/home/gsmkarly/Downloads/gnuarm/install/bin/
 ```
 Error 1 if no gnuarm export :  
 /usr/include/newlib/sys/_stdint.h:48:20: error: conflicting types for 'uint32_t'
    48 | typedef __uint32_t uint32_t ;
 
 Error 2 if no gnuarm export :  
-fatal error: sys/_types.h: No such file or directory
+fatal error: sys/_types.h: No such file or directory  
 
 ```
-export PATH=$PATH:/home/gsmkarly/Downloads/gnuarm/install/bin/
+apt-get install zip
 ```
+```
+update-alternatives --set gcc /usr/bin/gcc-9
 ```
 cd src/gsmkarly
 ```
