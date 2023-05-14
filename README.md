@@ -279,7 +279,9 @@ cd libosmo-dsp/
 ```
 autoreconf -i
 ```
+```
 ./configure 
+```
 ```
 make -j4 
 ```
@@ -326,6 +328,7 @@ zip -r trx_for_ubuntu.zip trx/
 ```
 ```
 cd trx/src
+```
 ```
 make  HOST_layer23_CONFARGS=--enable-transceiver 
 ```
@@ -398,96 +401,167 @@ ldconfig
 ```
 cd ..
 ```
-
+```
 git clone https://gitea.osmocom.org/osmocom/libosmo-netif.git
+```
+```
 cd libosmo-netif/  && git checkout 09c71b04f5a8d82515d0d4d541b8368b585dbd31
+```
+```
 autoreconf -i 
+```
+```
 ./configure 
+```
+```
 make -j4
+```
+```
 make install 
+```
+```
 ldconfig
+```
+```
 cd ..
-
+```
+```
 git clone --depth 1 -b 1.0.0 https://gitea.osmocom.org/osmocom/libosmo-sccp
+```
+```
 cd libosmo-sccp
+```
+```
 autoreconf -fi
+```
+```
 ./configure
+```
+```
 make -j4
+```
+```
 make check
+```
+```
 sudo make install
+```
+```
 sudo ldconfig
-
+```
+```
 cd ..
-
-
+```
+```
 git clone --depth 1 -b 1.13.0 https://gitea.osmocom.org/cellular-infrastructure/libsmpp34
+```
+```
 cd libsmpp34
+```
+```
 autoreconf -fi
+```
+```
 ./configure
-make -j4
+```
+```
+make 
+```
+```
 make check
+```
+```
 sudo make install
+```
+```
 sudo ldconfig
+```
+```
 cd ..
-
-#
-
-# 
+```
+```
 git clone git://git.osmocom.org/openbsc.git
-cd openbsc/openbsc/ && \
-git checkout d2550da76f9974bb1957f74c5d3eb75fdae923d9
-autoreconf -i && \
-./configure  --enable-nat --enable-smpp && \
-make -j4 && \
-make install && \
-ldconfig && \
-\
-
-cd ../..
-
-git clone https://gitea.osmocom.org/cellular-infrastructure/osmo-bts.git
-cd osmo-bts
-git checkout 59e7773055335a12d749faf84d88a8ed9fa0f201 
+```
+```
+cd openbsc/openbsc/ && git checkout d2550da76f9974bb1957f74c5d3eb75fdae923d9
+```
+```
 autoreconf -i 
-
+```
+```
+* Enabling nat and smpp : 
+```
+./configure  --enable-nat --enable-smpp
+```
+* Disabling nat and smpp : 
+```
+./configure
+```
+```
+make 
+```
+```
+make install && ldconfig 
+```
+```
+cd ../..
+```
+```
+git clone https://gitea.osmocom.org/cellular-infrastructure/osmo-bts.git
+```
+```
+cd osmo-bts
+```
+```
+git checkout 59e7773055335a12d749faf84d88a8ed9fa0f201 
+```
+```
+autoreconf -i 
+```
+```
 ./configure --enable-trx 
-make -j4  
-make install 
+```
+make 
+```
+```
+make install
+```
+```
 ldconfig 
+```
+# Demonstration
+[Demo karly](https://www.youtube.com/watch?v=_nGVeG_76W8&pp=ygUQY2FseXBzb2J0cyBrYXJseQ%3D%3D)
 
-
-
-
-# https://www.youtube.com/watch?v=_nGVeG_76W8&pp=ygUQY2FseXBzb2J0cyBrYXJseQ%3D%3D
-
-# find the phone
+Finding USB TTL of the phone : 
+```
 dmesg | grep tty
-
+```
+```
 cd src/OTHER/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0  -c target/firmware/board/compal_e88/trx.highram.bin
-
-
+```
+```
 cd src/OTHER/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0 -s /tmp/osmocom_l2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
-
-
+```
+```
 cd src/OTHER/trx/src  && host/osmocon/osmocon -m c123xor -p /dev/ttyUSB1 -s /tmp/osmocom_l2.2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
+```
 
-
+```
 cd src/OTHER/trx/src/host/layer23/src/transceiver/ && ./transceiver -a 975 -2 -r 99
+```
 
 config open-bsc.cfg
-# https://pastebin.com/Euj2QQ66
-
-
+[open-bsc.cfg](https://pastebin.com/Euj2QQ66)  
+```
 osmo-nitb -c open-bsc.cfg -l hlr.sqlite3 -P -C --debug=DRLL:DCC:DMM:DRR:DRSL:DNM
-
-
+```
 config osmo-bts.cfg
-# https://pastebin.com/YM3mS2bY
+[osmo-bts.cfg](https://pastebin.com/YM3mS2bY)
 
-
-apt-get install stress
-
+```
 osmo-bts-trx -c osmo-bts.cfg --debug DRSL:DOML:DLAPDM 
+```
+apt-get install stress-ng ntp
 
 # If Error dpkg locked appears
 mv /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock-frontend.old
