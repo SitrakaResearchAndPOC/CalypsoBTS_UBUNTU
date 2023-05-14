@@ -1,9 +1,9 @@
 # CalypsoBTS UBUNTU (20.O4)
 
 INSTALLATION KARLI BTS : 
-# as same ase : 
-https://gist.github.com/shamrin/8b2d6c1493c70544c39e
-https://security-bits.de/research/cellular/lab_setup
+as same ase : 
+[shamrin](https://gist.github.com/shamrin/8b2d6c1493c70544c39e)\
+[security-bits.de](https://security-bits.de/research/cellular/lab_setup)\
 
 apt update
 mkdir src
