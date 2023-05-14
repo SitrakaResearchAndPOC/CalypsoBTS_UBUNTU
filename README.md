@@ -109,6 +109,7 @@ update-alternatives --set gcc /usr/bin/gcc-4.9
 gcc --version
 ```
 All deb files in : /var/cache/apt/archives/
+### Installing gnuarm
 ```
 wget http://ftp.gnu.org/gnu/texinfo/texinfo-4.13.tar.gz 
 ```
@@ -179,6 +180,7 @@ export PATH=$PATH:/home/gsmkarly/Downloads/gnuarm/install/bin/
 ```
 cd src/gsmkarly
 ```
+### Installing libosmocore
 ```
 git clone https://github.com/osmocom/libosmocore
 ```
@@ -209,14 +211,14 @@ ldconfig -i
 ```
 cd ..
 ```
-
+### Changing to python 2
 ```
 apt-get install python2
 ```
 ```
 sudo ln -s /usr/bin/python2 /usr/bin/python
 ```
-
+### Installing osmocombb
 ```
 git clone https://github.com/osmocom/osmocom-bb
 ```
@@ -257,6 +259,7 @@ make
 ```
 cd ../..
 ```
+### Installing libosmo-dsp
 ```
 git clone https://github.com/osmocom/libosmo-dsp
 ```
@@ -296,9 +299,11 @@ ldconfig -i
 ```
 cd ..
 ```
+### Changing to gcc-5 
 ```
 update-alternatives --set gcc /usr/bin/gcc-5
 ```
+### Installing TRX
 ```
 git clone https://github.com/osmocom/osmocom-bb trx
 ```
@@ -358,6 +363,7 @@ make HOST_layer23_CONFARGS=--enable-transceiver -e CROSS_TOOL_PREFIX=arm-none-ea
 find -name trx.highram.bin  
 cd ../..  
 
+### Installing asterisk dependancies
 ```
 apt-get install libortp-dev
 ```
@@ -367,12 +373,11 @@ apt-get install dahdi-source
 ```
 apt-get install libtool shtool automake dahdi-source libssl-dev sqlite3 libsqlite3-dev libsctp-dev libfftw3-dev libfftw3-3 autoconf libsctp-dev libgnutls28-dev libcurl4-gnutls-dev git-core pkg-config make doxygen libtalloc-dev libpcsclite-dev libusb-1.0-0-dev
 ```
+### Changing to gcc-9
 ```
 update-alternatives --set gcc /usr/bin/gcc-9
 ```  
-  
-  
-Installing libosmo-abis : 
+### Installing libosmo-abis : 
 ```
 git clone https://gitea.osmocom.org/osmocom/libosmo-abis.git
 ```
@@ -406,8 +411,7 @@ ldconfig
 ```
 cd ..
 ```
-  
-Installing libosmo-netf: 
+#### Installing libosmo-netf: 
 ```
 git clone https://gitea.osmocom.org/osmocom/libosmo-netif.git
 ```
@@ -432,8 +436,7 @@ ldconfig
 ```
 cd ..
 ```
-  
-Installing libosmo-sccp : 
+### Installing libosmo-sccp : 
 ```
 git clone --depth 1 -b 1.0.0 https://gitea.osmocom.org/osmocom/libosmo-sccp
 ```
@@ -461,8 +464,7 @@ sudo ldconfig
 ```
 cd ..
 ```
-  
-Installing libsmpp34 : 
+### Installing libsmpp34 : 
 ```
 git clone --depth 1 -b 1.13.0 https://gitea.osmocom.org/cellular-infrastructure/libsmpp34
 ```
@@ -490,8 +492,7 @@ sudo ldconfig
 ```
 cd ..
 ```
-  
-Installing openbsc : 
+### Installing openbsc : 
 ```
 git clone git://git.osmocom.org/openbsc.git
 ```
@@ -518,8 +519,7 @@ make install && ldconfig
 ```
 cd ../..
 ```
-  
-Installing osmo-bts : 
+### Installing osmo-bts : 
 ```
 git clone https://gitea.osmocom.org/cellular-infrastructure/osmo-bts.git
 ```
@@ -547,21 +547,21 @@ ldconfig
 # Demonstration
 [Demo karly](https://www.youtube.com/watch?v=_nGVeG_76W8&pp=ygUQY2FseXBzb2J0cyBrYXJseQ%3D%3D)
   
-Finding USB TTL of the phone : 
+### Finding USB TTL of the phone : 
 ```
 dmesg | grep tty
 ```
 cd src/OTHER/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0  -c target/firmware/board/compal_e88/trx.highram.bin
 
-Terminal 1 + push button motorola phone 1: 
+### Terminal 1 + push button motorola phone 1: 
 ```
 cd src/OTHER/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0 -s /tmp/osmocom_l2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
 ```
-Terminal 2 + push button motorola phone 2: 
+### Terminal 2 + push button motorola phone 2: 
 ```
 cd src/OTHER/trx/src  && host/osmocon/osmocon -m c123xor -p /dev/ttyUSB1 -s /tmp/osmocom_l2.2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
 ```
-Terminal 3 + change arfcn : 
+### Terminal 3 + change arfcn : 
 
 ```
 cd src/OTHER/trx/src/host/layer23/src/transceiver/ && ./transceiver -a arfcn -2 -r 99
@@ -569,13 +569,13 @@ cd src/OTHER/trx/src/host/layer23/src/transceiver/ && ./transceiver -a arfcn -2 
 
 config open-bsc.cfg
 [open-bsc.cfg](https://pastebin.com/Euj2QQ66)  
-Terminal 4 : 
+### Terminal 4 : 
 ```
 osmo-nitb -c open-bsc.cfg -l hlr.sqlite3 -P -C --debug=DRLL:DCC:DMM:DRR:DRSL:DNM
 ```
 config osmo-bts.cfg
 [osmo-bts.cfg](https://pastebin.com/YM3mS2bY)  
-Terminal 5 : 
+### Terminal 5 : 
 ```
 osmo-bts-trx -c osmo-bts.cfg --debug DRSL:DOML:DLAPDM 
 ```
