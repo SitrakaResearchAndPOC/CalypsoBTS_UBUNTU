@@ -411,7 +411,7 @@ ldconfig
 ```
 cd ..
 ```
-#### Installing libosmo-netf: 
+### Installing libosmo-netif: 
 ```
 git clone https://gitea.osmocom.org/osmocom/libosmo-netif.git
 ```
@@ -534,6 +534,7 @@ autoreconf -i
 ```
 ```
 ./configure --enable-trx 
+```
 ```
 make 
 ```
