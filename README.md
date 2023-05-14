@@ -127,6 +127,9 @@ wget http://ftp.gnu.org/gnu/texinfo/texinfo-4.13.tar.gz
 tar xvf texinfo-4.13.tar.gz
 ```
 ```
+mv texinfo-4.13.tar.gz ../Desktop/gsmkarly_backup/
+```
+```
 cd texinfo-4.13
 ```
 * for raspberry :
