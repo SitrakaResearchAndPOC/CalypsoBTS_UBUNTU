@@ -368,6 +368,7 @@ make  HOST_layer23_CONFARGS=--enable-transceiver
 ```
 find -name trx.highram.bin
 ```
+This file trx.highram.bin should be appears
 ```
 cd ../..
 ```
