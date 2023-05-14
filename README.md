@@ -152,84 +152,105 @@ chmod +x gnu-arm-build.2.sh
 ```
 bash gnu-arm-build.2.sh
 ```
----
 Some times, compilation could take 5H,wait and drink some beer:  
 
 make[1]: Leaving directory '/root/Desktop/karli/gnuarm/build/gcc-4.5.2'  
 Build complete!  
 Add /root/Desktop/karli/gnuarm/install/bin to your PATH  
 to make arm-elf-gcc and friends
----
-mv /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock-frontend.old
-apt update
---------------------------------------------------------------------------
+```
 apt-get install zip
+```
+```
 update-alternatives --set gcc /usr/bin/gcc-9
-
-
+```
+Error 1 if no gnuarm export :  
 /usr/include/newlib/sys/_stdint.h:48:20: error: conflicting types for 'uint32_t'
    48 | typedef __uint32_t uint32_t ;
 
+Error 2 if no gnuarm export :  
+fatal error: sys/_types.h: No such file or directory
 
-(commande en un seul ligne)
-export PATH=$PATH:/root/Desktop/karli/gnuarm/install/bin
-#export PATH=$PATH:/home/gsmkarly/Downloads/gnuarm/install/bin/
-
-mkdir /usr/local/karly/
-
-
+```
+export PATH=$PATH:/home/gsmkarly/Downloads/gnuarm/install/bin/
+```
+```
 cd src/gsmkarly
-
-
-
+```
+```
 git clone https://github.com/osmocom/libosmocore
+```
+```
 cd libosmocore
+```
+```
 git checkout cf70aa0c40c574c32b832454f725cc37459c5d8d
-cd ..
-zip -r libosmocore_karly.zip libosmocore/
-mv libosmocore_karly.zip ../../Desktop/gsmkarly_backup/
+```
+```
+cd .. && zip -r libosmocore_karly.zip libosmocore/ && mv libosmocore_karly.zip ../../Desktop/gsmkarly_backup/
+```
+```
 cd libosmocore && autoreconf -i 
-#./configure --prefix=/usr/local/karly
+```
+```
 ./configure
-make -j4 
+```
+```
+make 
+```
+```
 make install 
+```
+```
 ldconfig -i 
+```
+```
 cd ..
+```
 
+```
 apt-get install python2
+```
+```
 sudo ln -s /usr/bin/python2 /usr/bin/python
+```
 
+```
 git clone https://github.com/osmocom/osmocom-bb
+```
+```
 cd osmocom-bb/
+```
+```
 git checkout 4f677e6ba8434dab376495cd996d140548fa6e93
+```
 
-# /*
-mousepad src/target/firmware/Makefile	
+Adding on file using mousepad src/target/firmware/Makefile	
  *|					#uncomment CFLAGS += -DCONFIG_TX_ENABLE	|*
-*|					#ctrl+o return ctrl+x	
-# */
 
+```
 cd src
+```
+```
 sed -i -e  's/#CFLAGS += -DCONFIG_TX_ENABLE/CFLAGS += -DCONFIG_TX_ENABLE/g' target/firmware/Makefile
-
+```
+```
 tail -f target/firmware/Makefile
-
+```
+```
 cd ../..
+```
+```
 zip -r osmocom-bb_karly4f677.zip osmocom-bb/
+```
+```
 mv osmocom-bb_karly4f677.zip ../../Desktop/gsmkarly_backup/
-
+```
+```
 cd osmocom-bb/src 
-make -j4 
- 
- 
- 
- # /* Error : 
- fatal error: sys/_types.h: No such file or directory
- 
- implies bad gnuarm path
- # */
- 
- 
+```
+make  
+```
  
 cd ../..
 
@@ -412,3 +433,6 @@ apt-get install stress
 
 osmo-bts-trx -c osmo-bts.cfg --debug DRSL:DOML:DLAPDM 
 
+# If Error dpkg locked appears
+mv /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock-frontend.old
+apt update
