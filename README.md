@@ -573,10 +573,11 @@ cd ../..
 git clone https://gitea.osmocom.org/cellular-infrastructure/osmo-bts.git
 ```
 ```
-cd osmo-bts
+cd osmo-bts && git checkout 59e7773055335a12d749faf84d88a8ed9fa0f201 
 ```
 ```
-git checkout 59e7773055335a12d749faf84d88a8ed9fa0f201 
+cd ../ && zip -r osmo-bts_karly.zip osmo-bts &&  mv osmo-bts_karly.zip ../../Desktop/gsmkarly_backup/ 
+
 ```
 ```
 autoreconf -i 
