@@ -179,7 +179,7 @@ Build complete!
 Add /root/Desktop/karli/gnuarm/install/bin to your PATH  
 to make arm-elf-gcc and friends
 ```
-cd ../..
+cd ../../..
 ```
 Exporting path and addin this on bashrc
 /home/karly/src/gsmkarly/gnuarm/install/bin
