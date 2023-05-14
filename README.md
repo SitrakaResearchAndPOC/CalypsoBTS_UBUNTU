@@ -225,8 +225,8 @@ cd osmocom-bb/
 git checkout 4f677e6ba8434dab376495cd996d140548fa6e93
 ```
 
-Adding on file using mousepad src/target/firmware/Makefile	
- *|					#uncomment CFLAGS += -DCONFIG_TX_ENABLE	|*
+Adding on file using mousepad src/target/firmware/Makefile  
+*|					#uncomment CFLAGS += -DCONFIG_TX_ENABLE	|*
 
 ```
 cd src
@@ -248,6 +248,7 @@ mv osmocom-bb_karly4f677.zip ../../Desktop/gsmkarly_backup/
 ```
 ```
 cd osmocom-bb/src 
+```
 ```
 make  
 ```
