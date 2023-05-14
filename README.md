@@ -179,6 +179,11 @@ Build complete!
 Add /root/Desktop/karli/gnuarm/install/bin to your PATH  
 to make arm-elf-gcc and friends
 ```
+cd ../..
+```
+Exporting path and addin this on bashrc
+```
+```
 apt-get install zip
 ```
 ```
