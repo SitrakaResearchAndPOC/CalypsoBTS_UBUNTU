@@ -199,6 +199,10 @@ apt-get install zip
 ```
 update-alternatives --set gcc /usr/bin/gcc-9
 ```
+Verifying gcc version :
+```
+gcc --version
+```
 ```
 cd src/gsmkarly
 ```
@@ -326,6 +330,7 @@ cd ..
 ```
 update-alternatives --set gcc /usr/bin/gcc-5
 ```
+Verifying version : 
 ```
 gcc --version
 ```
@@ -403,7 +408,11 @@ apt-get install libtool shtool automake dahdi-source libssl-dev sqlite3 libsqlit
 ### Changing to gcc-9
 ```
 update-alternatives --set gcc /usr/bin/gcc-9
-```  
+```
+Verifying version : 
+```
+gcc --version
+```
 ### Installing libosmo-abis : 
 ```
 git clone https://gitea.osmocom.org/osmocom/libosmo-abis.git
