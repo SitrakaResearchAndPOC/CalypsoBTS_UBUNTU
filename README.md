@@ -480,6 +480,9 @@ cd ..
 git clone --depth 1 -b 1.0.0 https://gitea.osmocom.org/osmocom/libosmo-sccp
 ```
 ```
+zip -r libosmo-sccp_karly.zip libosmo-sccp &&  mv libosmo-sccp_karly.zip ../../Desktop/gsmkarly_backup/ 
+```
+```
 cd libosmo-sccp
 ```
 ```
