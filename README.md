@@ -108,6 +108,7 @@ sed -i '$ d' /etc/apt/sources.list
 ```
 tail -f /etc/apt/sources.list
 ```
+Tape ctrl+C
 ```
 apt  update
 ```
