@@ -143,8 +143,8 @@ cd texinfo-4.13
 ```
 make 
 ```
-make  install && ldconfig
 ```
+make  install && ldconfig
 ```
 ```
 cd ..
