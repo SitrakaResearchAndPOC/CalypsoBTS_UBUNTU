@@ -421,10 +421,10 @@ git clone https://gitea.osmocom.org/osmocom/libosmo-abis.git
 cd libosmo-abis && git checkout 39dffb6c29a8d78ba8527aa4ccc13f34d1c3b319
 ```
 ```
-cd .. && zip -r libosmo-abis_kaly.zip libosmo-abis/
+cd .. && zip -r libosmo-abis_karly.zip libosmo-abis/
 ```
 ```
-mv libosmo-abis_kaly.zip ../../Desktop/gsmkarly_backup/
+mv libosmo-abis_karly.zip ../../Desktop/gsmkarly_backup/
 ```
 ```
 cd libosmo-abis
@@ -453,6 +453,9 @@ git clone https://gitea.osmocom.org/osmocom/libosmo-netif.git
 ```
 ```
 cd libosmo-netif/  && git checkout 09c71b04f5a8d82515d0d4d541b8368b585dbd31
+```
+```
+cd .. && zip -r libosmo-netif_karly.zip libosmo-netif && mv libosmo-netif_karly.zip    ../../Desktop/gsmkarly_backup/
 ```
 ```
 autoreconf -i 
