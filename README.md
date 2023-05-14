@@ -4,12 +4,14 @@ INSTALLATION KARLI BTS :
 As same as : 
 * [shamrin](https://gist.github.com/shamrin/8b2d6c1493c70544c39e)   
 * [security-bits.de](https://security-bits.de/research/cellular/lab_setup) 
+### Preparing all files
 ```
 apt update
 ```
 ```
 mkdir src && mkdir Desktop/gsmkarly_backup && cd src && mkdir gsmkarly
 ```
+### Installing all gcc
 ```
 sudo apt-get install libboost-all-dev libusb-1.0-0-dev doxygen python3-docutils python3-mako python3-numpy python3-requests python3-ruamel.yaml python3-setuptools cmake build-essential
 ```
@@ -498,7 +500,6 @@ cd openbsc/openbsc/ && git checkout d2550da76f9974bb1957f74c5d3eb75fdae923d9
 ```
 ```
 autoreconf -i 
-```
 ```
 * Enabling nat and smpp : 
 ```
