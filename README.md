@@ -1,39 +1,46 @@
 # CalypsoBTS UBUNTU (20.O4)
 
-INSTALLATION KARLI BTS :  \
-as same as : 
+INSTALLATION KARLI BTS :  
+As same as : 
 * [shamrin](https://gist.github.com/shamrin/8b2d6c1493c70544c39e)   
 * [security-bits.de](https://security-bits.de/research/cellular/lab_setup) 
-
+```
 apt update
+```
+```
 mkdir src
+```
+```
 mkdir Desktop/gsmkarly_backup
-
+```
+```
 cd src
+```
+```
 mkdir gsmkarly
-
-
-
-(commande en une seul ligne)
+```
+```
 sudo apt-get install libboost-all-dev libusb-1.0-0-dev doxygen python3-docutils python3-mako python3-numpy python3-requests python3-ruamel.yaml python3-setuptools cmake build-essential
-
+```
+```
 apt-get remove texinfo
-
+```
+```
 apt-get install alsa-base alsa-oss alsa-utils
+```
+```
 apt-get install oss-compat
-#modprobe snd-pcm-oss
+```
+modprobe snd-pcm-oss
+```
 modprobe snd-mixer-oss
-
-
-(commande en un seul ligne)
-#apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 40976EAF437D05B5 
-
- 
-
+```
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 40976EAF437D05B5 
+```
 apt-get install gcc-9 g++-9 gcc-10 g++-10 git -y
-
-# adding this one 
-# for raspberry : 
+```
+adding this one 
+for raspberry : 
 # deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe multiverse
 
 # "Architecture could be amd64, armel, arm64 ?" 
