@@ -424,7 +424,7 @@ cd libosmo-abis && git checkout 39dffb6c29a8d78ba8527aa4ccc13f34d1c3b319
 cd .. && zip -r libosmo-abis_kaly.zip libosmo-abis/
 ```
 ```
-mv libosmo-abis_kaly.zip ../Desktop/gsmkarly_backup/
+mv libosmo-abis_kaly.zip ../../Desktop/gsmkarly_backup/
 ```
 ```
 cd libosmo-abis
