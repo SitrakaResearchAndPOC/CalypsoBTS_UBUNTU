@@ -367,7 +367,10 @@ apt-get install libtool shtool automake dahdi-source libssl-dev sqlite3 libsqlit
 ```
 ```
 update-alternatives --set gcc /usr/bin/gcc-9
-```
+```  
+  
+  
+Installing libosmo-abis : 
 ```
 git clone https://gitea.osmocom.org/osmocom/libosmo-abis.git
 ```
@@ -401,6 +404,8 @@ ldconfig
 ```
 cd ..
 ```
+  
+Installing libosmo-netf: 
 ```
 git clone https://gitea.osmocom.org/osmocom/libosmo-netif.git
 ```
@@ -425,6 +430,8 @@ ldconfig
 ```
 cd ..
 ```
+  
+Installing libosmo-sccp : 
 ```
 git clone --depth 1 -b 1.0.0 https://gitea.osmocom.org/osmocom/libosmo-sccp
 ```
@@ -452,6 +459,8 @@ sudo ldconfig
 ```
 cd ..
 ```
+  
+Installing libsmpp34 : 
 ```
 git clone --depth 1 -b 1.13.0 https://gitea.osmocom.org/cellular-infrastructure/libsmpp34
 ```
@@ -479,6 +488,8 @@ sudo ldconfig
 ```
 cd ..
 ```
+  
+Installing openbsc : 
 ```
 git clone git://git.osmocom.org/openbsc.git
 ```
@@ -506,6 +517,8 @@ make install && ldconfig
 ```
 cd ../..
 ```
+  
+Installing osmo-bts : 
 ```
 git clone https://gitea.osmocom.org/cellular-infrastructure/osmo-bts.git
 ```
@@ -529,40 +542,44 @@ make install
 ```
 ldconfig 
 ```
+
 # Demonstration
 [Demo karly](https://www.youtube.com/watch?v=_nGVeG_76W8&pp=ygUQY2FseXBzb2J0cyBrYXJseQ%3D%3D)
-
+  
 Finding USB TTL of the phone : 
 ```
 dmesg | grep tty
 ```
-```
 cd src/OTHER/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0  -c target/firmware/board/compal_e88/trx.highram.bin
-```
+
+Terminal 1 + push button motorola phone 1: 
 ```
 cd src/OTHER/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0 -s /tmp/osmocom_l2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
 ```
+Terminal 2 + push button motorola phone 2: 
 ```
 cd src/OTHER/trx/src  && host/osmocon/osmocon -m c123xor -p /dev/ttyUSB1 -s /tmp/osmocom_l2.2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
 ```
+Terminal 3 + change arfcn : 
 
 ```
-cd src/OTHER/trx/src/host/layer23/src/transceiver/ && ./transceiver -a 975 -2 -r 99
+cd src/OTHER/trx/src/host/layer23/src/transceiver/ && ./transceiver -a arfcn -2 -r 99
 ```
 
 config open-bsc.cfg
 [open-bsc.cfg](https://pastebin.com/Euj2QQ66)  
+Terminal 4 : 
 ```
 osmo-nitb -c open-bsc.cfg -l hlr.sqlite3 -P -C --debug=DRLL:DCC:DMM:DRR:DRSL:DNM
 ```
 config osmo-bts.cfg
-[osmo-bts.cfg](https://pastebin.com/YM3mS2bY)
-
+[osmo-bts.cfg](https://pastebin.com/YM3mS2bY)  
+Terminal 5 : 
 ```
 osmo-bts-trx -c osmo-bts.cfg --debug DRSL:DOML:DLAPDM 
 ```
 apt-get install stress-ng ntp
 
-# If Error dpkg locked appears
+## If Error dpkg locked appears
 mv /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock-frontend.old
 apt update
