@@ -252,97 +252,152 @@ cd osmocom-bb/src
 ```
 make  
 ```
- 
+```
 cd ../..
-
+```
+```
 git clone https://github.com/osmocom/libosmo-dsp
+```
+```
 cd libosmo-dsp
+```
+```
 git checkout 551b9752bcd5d3d21bb2df0736b1801bda3d0d10
+```
+```
 cd ..
+```
+```
 zip -r libosmo-dsp_karly.zip libosmo-dsp
+```
+```
 mv libosmo-dsp_karly.zip ../../Desktop/gsmkarly_backup/
+```
+```
 cd libosmo-dsp/
+```
+```
 autoreconf -i
+```
 ./configure 
+```
 make -j4 
+```
+```
 make install 
+```
+```
 ldconfig -i
-
+```
+```
 cd ..
-
+```
+```
 update-alternatives --set gcc /usr/bin/gcc-5
-
+```
+```
 git clone https://github.com/osmocom/osmocom-bb trx
+```
+```
 cd trx
+```
+git checkout 620fe497efa492feff4550e336cc3f8167715936
+```
 git checkout jolly/testing
-#git checkout 620fe497efa492feff4550e336cc3f8167715936
-
+```
+```
 cd src
-
-# wget https://github.com/bbaranoff/telco_install_sh/raw/main/trx.highram.bin
-
-(commande en un seul ligne)
-
-sed -i -e  's/#CFLAGS += -DCONFIG_TX_ENABLE/CFLAGS += -DCONFIG_TX_ENABLE/g' target/firmware/Makefile
-
-tail -f target/firmware/Makefile
-mv trx_for_ubuntu.zip ../../Desktop/gsmkarly_backup/
-cd ../..
-zip -r trx_for_ubuntu.zip trx/
-cd trx/src
-make  HOST_layer23_CONFARGS=--enable-transceiver 
-find -name trx.highram.bin
-cd ../..
-
-
-
-
-
- 
-
-apt-get install libortp-dev
-apt-get install dahdi-source  
-apt-get install libtool shtool automake dahdi-source libssl-dev sqlite3 libsqlite3-dev libsctp-dev libfftw3-dev libfftw3-3 autoconf libsctp-dev libgnutls28-dev libcurl4-gnutls-dev git-core pkg-config make doxygen libtalloc-dev libpcsclite-dev libusb-1.0-0-dev
-
-
-# /* for debian
-apt-get install gcc gcc-arm-none-eabi
-git clone https://github.com/osmocom/osmocom-bb trx2
-cd trx2
-git checkout jolly/testing
-#git checkout 620fe497efa492feff4550e336cc3f8167715936
-cd src
+```
 wget https://github.com/bbaranoff/telco_install_sh/raw/main/trx.highram.bin
-
-(commande en un seul ligne)
+```
 sed -i -e  's/#CFLAGS += -DCONFIG_TX_ENABLE/CFLAGS += -DCONFIG_TX_ENABLE/g' target/firmware/Makefile
-
+```
+```
 tail -f target/firmware/Makefile
+```
+```
+mv trx_for_ubuntu.zip ../../Desktop/gsmkarly_backup/
+```
+```
 cd ../..
-zip -r trx2_for_ubuntu.zip trx2/
-cd trx2/src
-
-(commande en une seul ligne)
-make HOST_layer23_CONFARGS=--enable-transceiver -e CROSS_TOOL_PREFIX=arm-none-eabi-
-
+```
+```
+zip -r trx_for_ubuntu.zip trx/
+```
+```
+cd trx/src
+```
+make  HOST_layer23_CONFARGS=--enable-transceiver 
+```
+```
 find -name trx.highram.bin
+```
+```
 cd ../..
+```
+IF DEBIAN :  
+apt-get install gcc gcc-arm-none-eabi  
+git clone https://github.com/osmocom/osmocom-bb trx2  
+cd trx2  
+git checkout jolly/testing  
+or git checkout 620fe497efa492feff4550e336cc3f8167715936  
+cd src  
+wget https://github.com/bbaranoff/telco_install_sh/raw/main/trx.highram.bin  
+sed -i -e  's/#CFLAGS += -DCONFIG_TX_ENABLE/CFLAGS += -DCONFIG_TX_ENABLE/g' target/firmware/Makefile  
+tail -f target/firmware/Makefile  
+cd ../..  
+zip -r trx2_for_ubuntu.zip trx2/  
+cd trx2/src  
+make HOST_layer23_CONFARGS=--enable-transceiver -e CROSS_TOOL_PREFIX=arm-none-eabi-  
 
-# */ for debian
+find -name trx.highram.bin  
+cd ../..  
 
+```
+apt-get install libortp-dev
+```
+```
+apt-get install dahdi-source  
+```
+```
+apt-get install libtool shtool automake dahdi-source libssl-dev sqlite3 libsqlite3-dev libsctp-dev libfftw3-dev libfftw3-3 autoconf libsctp-dev libgnutls28-dev libcurl4-gnutls-dev git-core pkg-config make doxygen libtalloc-dev libpcsclite-dev libusb-1.0-0-dev
+```
+```
 update-alternatives --set gcc /usr/bin/gcc-9
-
+```
+```
 git clone https://gitea.osmocom.org/osmocom/libosmo-abis.git
+```
+```
 cd libosmo-abis && git checkout 39dffb6c29a8d78ba8527aa4ccc13f34d1c3b319
+```
+```
 cd .. && zip -r libosmo-abis_kaly.zip libosmo-abis/
+```
+```
 mv libosmo-abis_kaly.zip ../Desktop/gsmkarly_backup/
+```
+```
 cd libosmo-abis
+```
+```
 autoreconf -i 
-./configure 
+```
+```
+./configure
+```
+```
 make -j4 
-make install && \
-ldconfig && \
+```
+```
+make install 
+```
+```
+ldconfig 
+```
+```
 cd ..
+```
 
 git clone https://gitea.osmocom.org/osmocom/libosmo-netif.git
 cd libosmo-netif/  && git checkout 09c71b04f5a8d82515d0d4d541b8368b585dbd31
