@@ -8,16 +8,7 @@ As same as :
 apt update
 ```
 ```
-mkdir src
-```
-```
-mkdir Desktop/gsmkarly_backup
-```
-```
-cd src
-```
-```
-mkdir gsmkarly
+mkdir src && mkdir Desktop/gsmkarly_backup && cd src && mkdir gsmkarly
 ```
 ```
 sudo apt-get install libboost-all-dev libusb-1.0-0-dev doxygen python3-docutils python3-mako python3-numpy python3-requests python3-ruamel.yaml python3-setuptools cmake build-essential
@@ -26,10 +17,8 @@ sudo apt-get install libboost-all-dev libusb-1.0-0-dev doxygen python3-docutils 
 apt-get remove texinfo
 ```
 ```
-apt-get install alsa-base alsa-oss alsa-utils
+apt-get install alsa-base alsa-oss alsa-utils oss-compat
 ```
-```
-apt-get install oss-compat
 ```
 modprobe snd-pcm-oss
 ```
