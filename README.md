@@ -545,7 +545,11 @@ git clone git://git.osmocom.org/openbsc.git
 cd openbsc/openbsc/ && git checkout d2550da76f9974bb1957f74c5d3eb75fdae923d9
 ```
 ```
-autoreconf -i 
+cd ../../ && zip -r openbsc_karly.zip openbsc &&  mv openbsc_karly.zip ../../Desktop/gsmkarly_backup/ 
+
+```
+```
+cd openbsc/openbsc/ && autoreconf -i 
 ```
 * Enabling nat and smpp : 
 ```
