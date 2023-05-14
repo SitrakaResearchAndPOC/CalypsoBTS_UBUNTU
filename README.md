@@ -511,6 +511,9 @@ cd ..
 git clone --depth 1 -b 1.13.0 https://gitea.osmocom.org/cellular-infrastructure/libsmpp34
 ```
 ```
+zip -r libsmpp34_karly.zip libsmpp34 &&  mv libsmpp34_karly.zip ../../Desktop/gsmkarly_backup/ 
+```
+```
 cd libsmpp34
 ```
 ```
