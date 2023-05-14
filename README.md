@@ -57,6 +57,10 @@ apt-get install gcc-4.9 g++-4.9 gcc-7 g++-7 -y
 sed -i '$ d' /etc/apt/sources.list
 ```
 ```
+tail -f /etc/apt/sources.list 
+```
+Tape ctrl+D  
+```
 apt update
 ```
 ```
