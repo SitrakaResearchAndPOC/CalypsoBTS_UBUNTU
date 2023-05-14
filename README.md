@@ -351,13 +351,13 @@ sed -i -e  's/#CFLAGS += -DCONFIG_TX_ENABLE/CFLAGS += -DCONFIG_TX_ENABLE/g' targ
 tail -f target/firmware/Makefile
 ```
 ```
-mv trx_for_ubuntu.zip ../../Desktop/gsmkarly_backup/
-```
-```
 cd ../..
 ```
 ```
 zip -r trx_for_ubuntu.zip trx/
+```
+```
+mv trx_for_ubuntu.zip ../../Desktop/gsmkarly_backup/
 ```
 ```
 cd trx/src
