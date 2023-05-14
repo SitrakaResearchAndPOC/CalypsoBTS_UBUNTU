@@ -152,11 +152,14 @@ chmod +x gnu-arm-build.2.sh
 ```
 bash gnu-arm-build.2.sh
 ```
-Some times, compilation could take 5H,wait and drink some beer:    
-make[1]: Leaving directory '/root/Desktop/karli/gnuarm/build/gcc-4.5.2'
-Build complete! Add /root/Desktop/karli/gnuarm/install/bin to your PATH to make arm-elf-gcc and friends
-accessible directly.
- --------------------------------------------------------------------
+---
+Some times, compilation could take 5H,wait and drink some beer:  
+
+make[1]: Leaving directory '/root/Desktop/karli/gnuarm/build/gcc-4.5.2'  
+Build complete!  
+Add /root/Desktop/karli/gnuarm/install/bin to your PATH  
+to make arm-elf-gcc and friends
+---
 mv /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock-frontend.old
 apt update
 --------------------------------------------------------------------------
