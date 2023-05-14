@@ -35,7 +35,7 @@ echo "deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe m
 ```
 echo "deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe multiverse" >> /etc/apt/sources.list  
 ```
-* for normal computer
+* for normal computer :  
 Architecture could be amd64, armel, arm64 ?"  
 echo "deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse" >> /etc/apt/sources.list  
 ```
@@ -74,7 +74,7 @@ Adding on last line (could be done with mousepad):
 ```
 echo "deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse" >> /etc/apt/sources.list    
 ```
-* for normal computer : 
+* for normal computer :  
 deb [arch=amd64] http://fr.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list  
 ```
 echo "deb http://fr.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list
