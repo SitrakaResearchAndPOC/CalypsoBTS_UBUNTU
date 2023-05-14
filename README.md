@@ -199,6 +199,7 @@ apt-get install zip
 ```
 update-alternatives --set gcc /usr/bin/gcc-9
 ```
+```
 cd src/gsmkarly
 ```
 ### Installing libosmocore
