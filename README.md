@@ -29,7 +29,7 @@ apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32 40976E
 ```
 apt-get install gcc-9 g++-9 gcc-10 g++-10 git -y
 ```
-Adding one last line (could be done with mousepad)
+Adding on last line (could be done with mousepad)
 * for raspberry :  
 echo "deb http://ports.ubuntu.com/ubuntu-ports xenial main restricted universe multiverse" >> /etc/apt/sources.list  
 ```
@@ -69,7 +69,7 @@ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bi
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10
 ```
 
-Adding one last line (could be done with mousepad):  
+Adding on last line (could be done with mousepad):  
 * for raspberry : 
 ```
 echo "deb http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse" >> /etc/apt/sources.list    
