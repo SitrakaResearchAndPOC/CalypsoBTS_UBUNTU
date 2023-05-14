@@ -602,20 +602,20 @@ ldconfig
 ```
 dmesg | grep tty
 ```
-cd src/OTHER/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0  -c target/firmware/board/compal_e88/trx.highram.bin
+cd src/gsmkarly/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0  -c target/firmware/board/compal_e88/trx.highram.bin
 
 ### Terminal 1 + push button motorola phone 1: 
 ```
-cd src/OTHER/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0 -s /tmp/osmocom_l2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
+cd src/gsmkarly/trx/src  &&  host/osmocon/osmocon -m c123xor -p /dev/ttyUSB0 -s /tmp/osmocom_l2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
 ```
 ### Terminal 2 + push button motorola phone 2: 
 ```
-cd src/OTHER/trx/src  && host/osmocon/osmocon -m c123xor -p /dev/ttyUSB1 -s /tmp/osmocom_l2.2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
+cd src/gsmkarly/trx/src  && host/osmocon/osmocon -m c123xor -p /dev/ttyUSB1 -s /tmp/osmocom_l2.2 -c target/firmware/board/compal_e88/trx.highram.bin -r 99
 ```
 ### Terminal 3 + change arfcn : 
 
 ```
-cd src/OTHER/trx/src/host/layer23/src/transceiver/ && ./transceiver -a arfcn -2 -r 99
+cd src/gsmkarly/trx/src/host/layer23/src/transceiver/ && ./transceiver -a arfcn -2 -r 99
 ```
 
 config [open-bsc.cfg](https://pastebin.com/Euj2QQ66)  
