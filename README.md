@@ -182,9 +182,9 @@ to make arm-elf-gcc and friends
 cd ../..
 ```
 Exporting path and addin this on bashrc
-
+/home/karly/src/gsmkarly/gnuarm/install/bin
 ```
-export PATH=$PATH:/home/gsmkarly/Downloads/gnuarm/install/bin/
+export PATH=$PATH:src/gsmkarly/gnuarm/install/bin
 ```
 Error 1 if no gnuarm export :  
 /usr/include/newlib/sys/_stdint.h:48:20: error: conflicting types for 'uint32_t'
